@@ -53,7 +53,8 @@ class Home extends StatelessWidget{
                 )
               ],
             ),
-            ImageAsset()
+            ImageAsset(),
+            MyRaisedButton()
           ],
         )
 
@@ -72,4 +73,40 @@ class ImageAsset extends StatelessWidget{
     Image image = Image(image: assetImage, width: 250.0, height: 250.0);
     return Container(child: image);
   }
+}
+
+class MyRaisedButton extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+        color: Colors.deepOrange,
+        child: Text("Press Here",
+        style: TextStyle(color: Colors.white, fontSize: 20.0, fontFamily: 'Poppins', fontWeight: FontWeight.w700)),
+        elevation: 6.0,
+        onPressed: (){
+            buttonPressed(context);
+        },
+      ),
+    );
+  }
+
+  void buttonPressed(BuildContext context){
+    var alertDialog = AlertDialog(
+      title: Text("Alert Dialog Title"),
+      content: Text("Aler Dialog detailed content."),
+    );
+
+    showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return alertDialog;
+        }
+    );
+
+  }
+
 }
