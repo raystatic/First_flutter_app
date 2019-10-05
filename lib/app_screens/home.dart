@@ -16,7 +16,7 @@ class Home extends StatelessWidget{
         child: Text(
             "Flight",
             textDirection: TextDirection.ltr,
-            style: TextStyle(color: Colors.white, fontSize: 20.0)
+            style: TextStyle(color: Colors.white, fontSize: 20.0, fontFamily: 'Poppins', fontWeight: FontWeight.w700)
         ),
       ),
     );
